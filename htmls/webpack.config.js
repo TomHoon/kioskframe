@@ -10,8 +10,11 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.css$/, 
-        use: [MiniCssExtractPlugin.loader, "css-loader"]
+        test: /\.css$/i,
+        use: [
+          MiniCssExtractPlugin.loader,
+          "css-loader",
+        ],
       },
     ]
   },
@@ -25,16 +28,18 @@ module.exports = {
   mode: 'development',
   plugins: [
     new HtmlWebpackPlugin({
-      template: './pages/index.html',
+      template: 'index.html',
       filename: 'index.html',
-      chunks: ['main'], // !: entry 속성의 키 값임
     }),
     new HtmlWebpackPlugin({
       template: './pages/page1.html',
       filename: 'page1.html',
-      chunks: ['main'], // !: entry 속성의 키 값임
     }),
-    new MiniCssExtractPlugin({ filename: "styles.css" }), // Generates styles.css
+    new HtmlWebpackPlugin({
+      template: './pages/payment.html',
+      filename: 'payment.html',
+    }),
+    new MiniCssExtractPlugin({ filename: "[name].css" }), // Generates styles.css
     new CopyWebpackPlugin({
       patterns: [
         {
