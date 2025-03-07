@@ -1,13 +1,35 @@
 import { updateRoute } from '../common/route.js';
-import '../css/common.css';
-import '../css/reset.css';
+
 
 function routing(path) {
-    history.pushState({}, "", path);
+    history.pushState({ test: 123 }, "", path);
     updateRoute();
 }
 
+
 window.routing = routing;
+
+
+window.onpopstate = function (e) {
+
+}
+
+
 window.addEventListener('DOMContentLoaded', () => {
-    routing('/page1');
+
+    console.log('....>> DOMContentLoaded');
+
+    // path 없으면 page1으로 이동..
+    if (location.pathname == '/') {
+        routing('/page1');
+    } else {
+        routing(location.pathname);
+    }
+
+    Promise.all([
+        import('../css/reset.css'),
+        import('../css/common.css'),
+    ])
+        .then()
+        .catch(err => console.log(err))
 })

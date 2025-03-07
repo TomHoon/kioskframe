@@ -13,6 +13,7 @@ module.exports = {
         test: /\.css$/i,
         use: [
           MiniCssExtractPlugin.loader,
+          // "style-loader",
           "css-loader",
         ],
       },
@@ -27,25 +28,26 @@ module.exports = {
   },
   mode: 'development',
   plugins: [
+    new MiniCssExtractPlugin({ filename: "static/[name].css" }),
     new HtmlWebpackPlugin({
       template: 'index.html',
-      filename: 'index.html',
+      filename: 'index.html'
     }),
     new HtmlWebpackPlugin({
       template: './pages/page1.html',
-      filename: 'page1.html',
+      filename: 'page1.html'
+    }),
+    new HtmlWebpackPlugin({
+      template: './pages/page2.html',
+      filename: 'page2.html'
     }),
     new HtmlWebpackPlugin({
       template: './pages/payment.html',
-      filename: 'payment.html',
+      filename: 'payment.html'
     }),
-    new MiniCssExtractPlugin({ filename: "[name].css" }), // Generates styles.css
     new CopyWebpackPlugin({
       patterns: [
-        {
-          from: 'common/icons', // Source folder
-          to: 'images/', // Destination folder in dist
-        },
+        { from: 'common/icons', to: 'images/' },
       ],
     }),
   ],

@@ -1,31 +1,5 @@
 // import 위젯 from './payment.module';
 
-// main();
-
-// async function main() {
-//   const { button, coupon } = 위젯.set초기셋팅();
-
-//   const 개발자key = "test_gck_docs_Ovk5rk1EwkEbP0W43n07xlzm";
-//   const 고객key = "tXBIn-wEhKTER9tiLWeFU";
-
-//   // ------ 1. 위젯 생성  ------
-//   const widgets = make토스위젯(개발자key, 고객key);
-
-//   // ------ 2. 주문의 결제 금액 설정 ------
-//   await 위젯.set주문결제금액.bind(widgets, 5000);
-
-//   // ------ 3. 화면 렌더링 ------
-//   await 위젯.render결제화면.bind(widgets);
-
-//   // ------  4. 결제 금액변경시) 업데이트 ------
-//   coupon.addEventListener("change", update금액);
-
-//   // ------ 5. '결제하기' 버튼 누르면 결제창 띄우기 ------
-//   button.addEventListener("click", 위젯.popup결제창.bind(widgets));
-// }
-
-main();
-
 async function main() {
   const button = document.getElementById("payment-button");
   const coupon = document.getElementById("coupon-box");
@@ -33,7 +7,7 @@ async function main() {
   const clientKey = "test_gck_docs_Ovk5rk1EwkEbP0W43n07xlzm";
   const tossPayments = TossPayments(clientKey);
   // 회원 결제
-  const customerKey = "YNeHlVs2iX4uUHejEayJQ";
+  const customerKey = "T48ryblO2dB8gWWKwm1Lh";
   const widgets = tossPayments.widgets({
     customerKey,
   });
@@ -76,7 +50,7 @@ async function main() {
   // ------ '결제하기' 버튼 누르면 결제창 띄우기 ------
   button.addEventListener("click", async function () {
     await widgets.requestPayment({
-      orderId: "oiUDhregiTvDhyvVWAVH8",
+      orderId: "MpCPmTUYJGiZr9hhZzKzV",
       orderName: "토스 티셔츠 외 2건",
       successUrl: window.location.origin + "/success.html",
       failUrl: window.location.origin + "/fail.html",
@@ -86,3 +60,33 @@ async function main() {
     });
   });
 }
+
+
+// ----- payment 열렸다 -------
+
+const loadTossPayScript = () => {
+
+
+  let script = document.createElement('script');
+
+  script.src = "https://js.tosspayments.com/v2/standard";
+  script.setAttribute('id', 'tosspayment');
+
+  script.onload = function () {
+    main();
+  };
+
+  script.onerror = function () {
+    console.log('toss payment error >>>>> ');
+  }
+
+  document.head.append(script);
+
+
+}
+
+
+
+loadTossPayScript();
+
+
