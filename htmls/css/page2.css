@@ -1,0 +1,133 @@
+
+.type2-container header {
+ width: 100%;
+ height: 100px;
+}
+
+.type2-container header ul {
+ display: flex;
+ flex-direction: row;
+ justify-content: space-between;
+ color: #F20C93;
+ font-size: 30px;
+ height: 100%;
+}
+
+.type2-container header ul li {
+ height: 100%;
+ width: 100%;
+}
+
+.type2-container header ul li:nth-child(2) {
+ background: #F8F8F8;
+ color: #CACACA;
+}
+
+.product-state {
+ margin: 10px 0 50px 0;
+}
+
+.product-state ul {
+ display: flex;
+}
+
+.product-state ul li {
+ display: flex;
+}
+
+.product-state ul li:nth-child(1) {
+ display: flex;
+ flex-grow: 1;
+}
+
+.product-state ul li:nth-child(2) {
+ width: 40%;
+ flex-direction: column;
+ justify-content: center;
+ flex-grow: 2;
+ font-size: 25px;
+}
+
+.product-state ul li:nth-child(3) {
+ flex-grow: 1;
+ color: #F20C93;
+ font-size: 40px;
+}
+
+.product-guide1 {
+ color: #989898;
+ font-size: 30px;
+}
+
+.product-guide2 {
+ color: #F20C0C;
+ font-size: 30px;
+ margin-top: 80px;
+}
+
+.product-type-list {
+ margin-top: 64px;
+ display: flex;
+ justify-content: space-between;
+}
+
+.product-type-list li {
+ width: 280px;
+ height: 280px;
+ border: 1px solid #D2D2D2;
+ border-radius: 15px;
+ flex-direction: column;
+ gap: 30px;
+}
+
+.product-type-list .active {
+ border: 1px solid #EF98CD;
+}
+
+.product-type-list h5 {
+ color: #9F9F9F;
+}
+
+.product-type-list .active h5 {
+ color: #F20C93;
+ font-size: 20px;
+}
+
+.product-type-list h6 {
+ display: flex;
+ flex-direction: row;
+ gap: 30px;
+}
+
+.type2-container footer ul {
+ display: flex;
+ align-items: center;
+ gap: 40px;
+ flex-direction: row;
+}
+
+.type2-container footer ul li {
+ width: 471px;
+ height: 114px;
+ border-radius: 70px;
+}
+
+.type2-container footer ul li img {
+ position: absolute;
+ left: 80px;
+}
+
+.type2-container footer ul li:nth-child(1) {
+ position: relative;
+ border: 1px solid #B9B9B9;
+ color: #F20C93;
+ border-radius: 70px;
+ font-size: 30px;
+}
+
+.type2-container footer ul li:nth-child(2) {
+ border: none;
+ background-color: #F20C93;
+ font-size: 30px;
+ color: rgb(255, 255, 255);
+}

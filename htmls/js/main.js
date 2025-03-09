@@ -1,8 +1,8 @@
 import { updateRoute } from '../common/route.js';
 
 
-function routing(path) {
-    history.pushState({ test: 123 }, "", path);
+function routing(path, param = {}) {
+    history.pushState(param, "", path);
     updateRoute();
 }
 

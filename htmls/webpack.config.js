@@ -31,7 +31,8 @@ module.exports = {
     new MiniCssExtractPlugin({ filename: "static/[name].css" }),
     new HtmlWebpackPlugin({
       template: 'index.html',
-      filename: 'index.html'
+      filename: 'index.html',
+      favicon: './common/images/white-main-icon.ico'
     }),
     new HtmlWebpackPlugin({
       template: './pages/page1.html',
@@ -47,7 +48,7 @@ module.exports = {
     }),
     new CopyWebpackPlugin({
       patterns: [
-        { from: 'common/icons', to: 'images/' },
+        { from: 'common/images', to: 'images/' },
       ],
     }),
   ],
